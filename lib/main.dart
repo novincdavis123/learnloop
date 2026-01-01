@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learnloop/features/onboarding/screen/onboarding_screen.dart';
+import 'package:learnloop/routes/app_pages.dart';
+import 'package:learnloop/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
+      initialRoute: AppRoutes.onboarding, // Start with onboarding
+      getPages: AppPages.pages, // Connect all pages & bindings
       home: const OnboardingScreen(),
     );
   }
