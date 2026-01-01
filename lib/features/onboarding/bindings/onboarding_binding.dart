@@ -4,6 +4,6 @@ import 'package:learnloop/features/onboarding/controllers/onboarding_controller.
 class OnboardingBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<OnboardingController>(() => OnboardingController());
+    Get.lazyPut<OnboardingController>(() => OnboardingController(pageCount: 3));
   }
 }

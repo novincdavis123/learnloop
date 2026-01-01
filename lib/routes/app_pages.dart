@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:learnloop/features/home/controllers/home_controller.dart';
 import 'package:learnloop/features/home/screen/home_screen.dart';
 import 'package:learnloop/features/onboarding/controllers/onboarding_controller.dart';
-import 'package:learnloop/features/onboarding/screen/onboarding_screen.dart';
+import 'package:learnloop/features/onboarding/screen/onboarding_carousal.dart';
 import 'package:learnloop/features/video_lessons/controller/videoslesson_controller.dart';
 import 'package:learnloop/features/video_lessons/screen/videos_page.dart';
 import 'app_routes.dart';
@@ -14,7 +14,7 @@ class AppPages {
       name: AppRoutes.onboarding,
       page: () => OnboardingScreen(),
       binding: BindingsBuilder(() {
-        Get.put(OnboardingController());
+        Get.put(OnboardingController(pageCount: 3));
       }),
     ),
 

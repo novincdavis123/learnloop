@@ -4,14 +4,13 @@ import 'package:learnloop/routes/app_routes.dart';
 
 class OnboardingController extends GetxController {
   var currentPage = 0.obs;
-  final int pageCount;
-
-  OnboardingController({required this.pageCount});
+  final int pageCount = 3;
 
   void onPageChanged(int index) {
     currentPage.value = index;
   }
 
+  // Pass PageController from the screen
   void nextPage(PageController pageController) {
     if (currentPage.value < pageCount - 1) {
       pageController.animateToPage(
@@ -29,6 +28,6 @@ class OnboardingController extends GetxController {
   }
 
   void finishOnboarding() {
-    Get.offAllNamed(AppRoutes.home);
+    Get.offAllNamed(AppRoutes.home); // Make sure Routes is imported
   }
 }
