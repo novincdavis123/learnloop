@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learnloop/data/constants/colors.dart';
 import 'package:learnloop/features/onboarding/widgets/tertiary_onboarding.dart';
-import 'package:learnloop/features/onboarding/widgets/initial_onboarding.dart.dart';
-import 'package:learnloop/features/onboarding/widgets/secondary_onboarding.dart.dart';
+import 'package:learnloop/features/onboarding/widgets/initial_onboarding.dart';
+import 'package:learnloop/features/onboarding/widgets/secondary_onboarding.dart';
 import 'package:learnloop/routes/app_routes.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../controllers/onboarding_controller.dart';
@@ -58,30 +58,34 @@ class OnboardingScreen extends StatelessWidget {
                         dotWidth: 12,
                       ),
                     ),
-                    SizedBox(height: 40),
-
+                    const SizedBox(height: 40),
                     InkWell(
                       onTap: () => controller.nextPage(pageController),
                       child: Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 20,
                           vertical: 10,
                         ),
                         height: 50,
-                        width: 400,
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           color: AppColors.primaryColor,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(
                           child: Text(
-                            'Next',
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            controller.currentPage.value == myPages.length - 1
+                                ? 'Start'
+                                : 'Next',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     InkWell(
                       onTap: () {
                         Get.offAllNamed(AppRoutes.home);

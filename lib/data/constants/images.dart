@@ -5,4 +5,6 @@ class Images {
       'assets/images/secondary_onboarding.png';
   // static const String tertiaryOnboarding =
   //     'assets/images/tertiary_onboarding.png';
+  static const String students =
+      'assets/images/happy-students-working-together-laptop.png';
 }

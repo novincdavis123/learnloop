@@ -3,11 +3,16 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   var isLoading = false.obs;
   var subjects = <dynamic>[].obs;
+  var selectedIndex = 0.obs; // reactive tab index
 
   @override
   void onInit() {
     // will fetchSubjects later
     super.onInit();
+  }
+
+  void changeTab(int index) {
+    selectedIndex.value = index;
   }
 
   void fetchSubjects() async {
