@@ -1,16 +1,35 @@
-# learnloop
+# LearnLoop
 
-A new Flutter project.
+LearnLoop is a Flutter-based learning application that demonstrates modern Flutter development practices including **GetX state management**, **REST API integration**, **reactive UI**, and dynamic content handling. The app includes onboarding screens, a home dashboard with multiple tabs, and video content pages.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+### Onboarding Flow
+- Multi-step onboarding screens with images and descriptions.
+- Smooth page indicators using `smooth_page_indicator`.
+- "Next" button that becomes "Start" on the last page.
+- "Skip" button that directly navigates to HomeScreen.
+- Fully reactive using **GetX**.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Home Screen
+- Bottom navigation bar with four tabs: Home, Books, Calendar, Profile.
+- Dynamic and reactive content loading for each tab.
+- Home tab shows personalized greeting and a carousel of cards.
+- Built with GetX for reactive state updates and navigation.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Video Page
+- Video selection and playback (placeholder for integration).
+- Navigation from subject selection to video pages.
+- Designed for dynamic, reactive updates using GetX.
+
+### State Management
+- **GetX** for state management and reactive UI updates.
+- Controllers handle dynamic page indices, tab navigation, and data fetching.
+- Minimal Obx usage for optimal performance.
+
+---
+
+
+
