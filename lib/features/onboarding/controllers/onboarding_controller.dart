@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter/widgets.dart';
 import 'package:learnloop/routes/app_routes.dart';
 
 class OnboardingController extends GetxController {
-  var currentPage = 0.obs;
   final int pageCount;
+  var currentPage = 0.obs;
 
   OnboardingController({required this.pageCount});
 
@@ -12,23 +12,16 @@ class OnboardingController extends GetxController {
     currentPage.value = index;
   }
 
-  void nextPage(PageController pageController) {
+  void nextPage(PageController controller) {
     if (currentPage.value < pageCount - 1) {
-      pageController.animateToPage(
-        currentPage.value + 1,
+      // go to next page
+      controller.nextPage(
         duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
+        curve: Curves.easeIn,
       );
     } else {
-      finishOnboarding();
+      // last page -> go to HomeScreen
+      Get.offAllNamed(AppRoutes.home);
     }
-  }
-
-  void skip() {
-    finishOnboarding();
-  }
-
-  void finishOnboarding() {
-    Get.offAllNamed(AppRoutes.home);
   }
 }

@@ -6,10 +6,10 @@ class FourthTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Third Tab')),
+      appBar: AppBar(title: Text('Fourth Tab')),
       body: Center(
         child: Text(
-          'Welcome to the Third Tab!',
+          'Welcome to the Fourth Tab!',
           style: TextStyle(fontSize: 24),
         ),
       ),
